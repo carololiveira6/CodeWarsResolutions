@@ -126,11 +126,6 @@ function multiply(a, b){
     return a * b
   }
 
-// solution Python:
-// def multiply(a, b):
-//   return a * b
-
-
   /* Kata "How good are you really?" on:
   https://www.codewars.com/kata/5601409514fc93442500010b */
 
