@@ -214,7 +214,7 @@ function hero(bullets, dragons){
   /* Kata "Sum of positive" on:
   https://www.codewars.com/kata/5715eaedb436cf5606000381 */
 
-//   solution:
+//   solution 1:
 
 function positiveSum(arr) {
     let sum = 0
@@ -224,6 +224,19 @@ function positiveSum(arr) {
       }
     }
     return sum
+  }
+
+//  solution 2: 
+
+function positiveSum(arr) {
+    let output = 0;
+    for (let i = 0; i < arr.length; i++) {
+      let num = arr[i];
+      if (num > 0) {
+        output += num;
+      }
+    }
+    return output;
   }
 
   /* Kata "All Star Code Challenge #18" on:
@@ -377,4 +390,22 @@ var championsLeagueGoals = 10
 var copaDelReyGoals = 5
 
 var totalGoals = laLigaGoals + championsLeagueGoals + copaDelReyGoals
+
+/* Kata "Square(n) Sum" on:
+https://www.codewars.com/kata/515e271a311df0350d00000f/train/javascript */
+
+//  solution:
+
+function squareSum(numbers){
+  let output = 0;
+  
+  for (let i = 0; i < numbers.length; i++) {
+    let number = numbers[i];
+    let squared = number * number;
+    
+    output += squared;
+  }
+  return output;
+}
+
 
