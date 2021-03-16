@@ -408,13 +408,6 @@ function squareSum(numbers){
   return output;
 }
 
-/* Kata "Crash Override" on:
-https://www.codewars.com/kata/578c1e2edaa01a9a02000b7f/train/javascript */
-
-//  solution:
-
-
-
 /* Kata "Welcome!" on:
 https://www.codewars.com/kata/577ff15ad648a14b780000e7/train/javascript */
 
