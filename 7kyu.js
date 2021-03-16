@@ -122,6 +122,44 @@ https://www.codewars.com/kata/54e8c3e89e2ae6f4900005a1/ */
 
 //  solution:
 
-questions.forEach(function (elem) {
-  elem.usersAnswer = null;
-});
+  /* Kata "Get the Middle Character" on:
+https://www.codewars.com/kata/56747fd5cb988479af000028/train/javascript */
+
+//  solution:
+
+function getMiddle(s)
+{
+  let middle = Math.floor((s.length)/2);
+  if (s.length % 2 === 0) {
+    return s[middle-1] + s[middle]
+  } else {
+    return s[middle]
+  }
+}
+
+/* Kata "The Office II - Boredom Score" on:
+https://www.codewars.com/kata/57ed4cef7b45ef8774000014/train/javascript */
+
+//  solution:
+
+const boredomScore = {
+  'accounts': 1,
+  'finance': 2,
+  'canteen': 10,
+  'regulation': 3,
+  'trading': 6,
+  'change': 6,
+  'IS': 8,
+  'retail': 5,
+  'cleaning': 4,
+  'pissing about': 25
+}
+
+function boredom(staff){
+  const teamScore = Object.values(staff)
+    .map(department => boredomScore[department])
+    .reduce((total, value) => total + value, 0)
+  if (teamScore <= 80) return 'kill me now'
+  if (teamScore < 100 && teamScore > 80) return 'i can handle this'
+  return 'party time!!'
+}
