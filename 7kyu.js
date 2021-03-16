@@ -75,4 +75,3 @@ var removeVowels = function(str){
     return newString;
   }
 
-  
