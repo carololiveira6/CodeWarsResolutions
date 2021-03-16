@@ -125,3 +125,22 @@ https://www.codewars.com/kata/54e8c3e89e2ae6f4900005a1/ */
 questions.forEach(function (elem) {
   elem.usersAnswer = null;
 });
+
+/* Kata "Monkey Tennis - The Aftermath" on:
+https://www.codewars.com/kata/5a0c5b3206d5b696940000b8/ */
+
+//  solution:
+
+function ballCollector(detritus) {
+  
+  let sack = detritus.filter(function (elem) {
+    if (elem === 58) {
+      return elem
+    }
+  })
+  let weight = sack.length * 58
+  let obj = {
+    'weight': weight 
+  }
+  return obj
+}
