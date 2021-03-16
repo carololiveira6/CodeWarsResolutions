@@ -607,32 +607,6 @@ const aliasGen = (fName, sName) =>
     ? `${firstName[firstLetter(fName)]} ${surName[firstLetter(sName)]}`
     : 'Your name must start with a letter from A - Z.'
 
-/* Kata "The Office II - Boredom Score" on:
-https://www.codewars.com/kata/57ed4cef7b45ef8774000014/train/javascript */
-
-//  solution:
-
-const boredomScore = {
-  'accounts': 1,
-  'finance': 2,
-  'canteen': 10,
-  'regulation': 3,
-  'trading': 6,
-  'change': 6,
-  'IS': 8,
-  'retail': 5,
-  'cleaning': 4,
-  'pissing about': 25
-}
-
-function boredom(staff){
-  const teamScore = Object.values(staff)
-    .map(department => boredomScore[department])
-    .reduce((total, value) => total + value, 0)
-  if (teamScore <= 80) return 'kill me now'
-  if (teamScore < 100 && teamScore > 80) return 'i can handle this'
-  return 'party time!!'
-}
 
 /* Kata "Regular Ball Super Ball" on:
 https://www.codewars.com/kata/53f0f358b9cb376eca001079/train/javascript */
@@ -646,5 +620,3 @@ var Ball = function(ballType) {
 	}
 }
 
-/* Kata "" on:
- */
