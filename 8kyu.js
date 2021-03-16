@@ -126,11 +126,6 @@ function multiply(a, b){
     return a * b
   }
 
-// solution Python:
-// def multiply(a, b):
-//   return a * b
-
-
   /* Kata "How good are you really?" on:
   https://www.codewars.com/kata/5601409514fc93442500010b */
 
@@ -219,7 +214,7 @@ function hero(bullets, dragons){
   /* Kata "Sum of positive" on:
   https://www.codewars.com/kata/5715eaedb436cf5606000381 */
 
-//   solution:
+//   solution 1:
 
 function positiveSum(arr) {
     let sum = 0
@@ -229,6 +224,19 @@ function positiveSum(arr) {
       }
     }
     return sum
+  }
+
+//  solution 2: 
+
+function positiveSum(arr) {
+    let output = 0;
+    for (let i = 0; i < arr.length; i++) {
+      let num = arr[i];
+      if (num > 0) {
+        output += num;
+      }
+    }
+    return output;
   }
 
   /* Kata "All Star Code Challenge #18" on:
@@ -383,3 +391,120 @@ var copaDelReyGoals = 5
 
 var totalGoals = laLigaGoals + championsLeagueGoals + copaDelReyGoals
 
+/* Kata "Square(n) Sum" on:
+https://www.codewars.com/kata/515e271a311df0350d00000f/train/javascript */
+
+//  solution:
+
+function squareSum(numbers){
+  let output = 0;
+  
+  for (let i = 0; i < numbers.length; i++) {
+    let number = numbers[i];
+    let squared = number * number;
+    
+    output += squared;
+  }
+  return output;
+}
+
+/* Kata "Crash Override" on:
+https://www.codewars.com/kata/578c1e2edaa01a9a02000b7f/train/javascript */
+
+//  solution:
+
+
+
+/* Kata "Welcome!" on:
+https://www.codewars.com/kata/577ff15ad648a14b780000e7/train/javascript */
+
+//  solution: (falta código)
+
+const languages = {
+  english: 'Welcome',
+  czech: 'Vitejte',
+  danish: 'Velkomst',
+  dutch: 'Welkom',
+  estonian: 'Tere tulemast',
+  finnish: 'Tervetuloa',
+  flemish: 'Welgekomen',
+  french: 'Bienvenue',
+  german: 'Willkommen',
+  irish: 'Failte',
+  italian: 'Benvenuto',
+  latvian: 'Gaidits',
+  lithuanian: 'Laukiamas',
+  polish: 'Witamy',
+  spanish: 'Bienvenido',
+  swedish: 'Valkommen',
+  welsh: 'Croeso'
+}
+
+function greet(language) {
+	let greeting = languages[language];
+  
+  return greeting
+}
+
+/* Kata "I love you, a little , a lot, passionately ... not at all" on: 
+https://www.codewars.com/kata/57f24e6a18e9fad8eb000296/train/javascript */
+
+//  solution 1:
+
+function howMuchILoveYou(nbPetals) {
+  const options = [
+    'I love you',
+    'a little',
+    'a lot',
+    'passionately',
+    'madly',
+    'not at all'
+  ];
+  
+  let counter = 0
+  let output = '';
+  let discount = 0;
+  
+  while (counter < nbPetals) {
+    if (counter % options.length === 0 && counter > 0) {
+      discount++;
+    }
+    
+    output = options[counter - (discount * options.length)]
+    counter++;
+  }
+  
+  return output;
+}
+
+//  solution 2:
+
+function howMuchILoveYou(nbPetals) {
+  const options = [
+    'I love you',
+    'a little',
+    'a lot',
+    'passionately',
+    'madly',
+    'not at all'
+  ];
+let index = (nbPetals - 1) % options.length
+return options [index]
+}
+
+/* Kata "Do I get a bonus? " on:
+https://www.codewars.com/kata/56f6ad906b88de513f000d96/train/javascript */
+
+//  solution:
+
+function bonusTime(salary, bonus) {
+  let valor = salary;
+  
+  if (bonus === true) {
+    valor = salary * 10;
+  }
+  
+  let output = `£${valor}`;
+  
+  return output;
+}
