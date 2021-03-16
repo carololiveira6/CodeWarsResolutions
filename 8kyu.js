@@ -536,3 +536,122 @@ https://www.codewars.com/kata/58f8a3a27a5c28d92e000144 */
 
 //  solution:
 
+function firstNonConsecutive(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i - 1] + 1 !== arr[i])
+      return arr[i];
+  }
+    return null;
+}
+
+/* Kata "Crash Override" on:
+https://www.codewars.com/kata/578c1e2edaa01a9a02000b7f/solutions/javascript */
+
+firstName = {
+  A: 'Alpha',
+  B: 'Beta',
+  C: 'Cache',
+  D: 'Data',
+  E: 'Energy',
+  F: 'Function',
+  G: 'Glitch',
+  H: 'Half-life',
+  I: 'Ice',
+  J: 'Java',
+  K: 'Keystroke',
+  L: 'Logic',
+  M: 'Malware',
+  N: 'Nagware',
+  O: 'OS',
+  P: 'Phishing',
+  Q: 'Quantum',
+  R: 'RAD',
+  S: 'Strike',
+  T: 'Trojan',
+  U: 'Ultraviolet',
+  V: 'Vanilla',
+  W: 'WiFi',
+  X: 'Xerox',
+  Y: 'Y',
+  Z: 'Zero',
+}
+
+surName = {
+  A: 'Analogue',
+  B: 'Bomb',
+  C: 'Catalyst',
+  D: 'Discharge',
+  E: 'Electron',
+  F: 'Faraday',
+  G: 'Gig',
+  H: 'Hacker',
+  I: 'IP',
+  J: 'Jabber',
+  K: 'Killer',
+  L: 'Lazer',
+  M: 'Mike',
+  N: 'n00b',
+  O: 'Overclock',
+  P: 'Payload',
+  Q: 'Quark',
+  R: 'Roy',
+  S: 'Spy',
+  T: 'T-Rex',
+  U: 'Unit',
+  V: 'Virus',
+  W: 'Worm',
+  X: 'X',
+  Y: 'Yob',
+  Z: 'Zombie',
+}
+
+const firstLetter = string => string[0].toUpperCase()
+
+const isValidName = name => /[a-z]/gi.test(name)
+
+const aliasGen = (fName, sName) =>
+  isValidName(fName[0]) && isValidName(sName[0])
+    ? `${firstName[firstLetter(fName)]} ${surName[firstLetter(sName)]}`
+    : 'Your name must start with a letter from A - Z.'
+
+/* Kata "The Office II - Boredom Score" on:
+https://www.codewars.com/kata/57ed4cef7b45ef8774000014/train/javascript */
+
+//  solution:
+
+const boredomScore = {
+  'accounts': 1,
+  'finance': 2,
+  'canteen': 10,
+  'regulation': 3,
+  'trading': 6,
+  'change': 6,
+  'IS': 8,
+  'retail': 5,
+  'cleaning': 4,
+  'pissing about': 25
+}
+
+function boredom(staff){
+  const teamScore = Object.values(staff)
+    .map(department => boredomScore[department])
+    .reduce((total, value) => total + value, 0)
+  if (teamScore <= 80) return 'kill me now'
+  if (teamScore < 100 && teamScore > 80) return 'i can handle this'
+  return 'party time!!'
+}
+
+/* Kata "Regular Ball Super Ball" on:
+https://www.codewars.com/kata/53f0f358b9cb376eca001079/train/javascript */
+
+var Ball = function(ballType) {
+	if (!ballType){
+		this.ballType = 'regular';
+	}
+	else {
+		this.ballType= 'super';
+	}
+}
+
+/* Kata "" on:
+ */
