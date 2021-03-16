@@ -163,3 +163,31 @@ function boredom(staff){
   if (teamScore < 100 && teamScore > 80) return 'i can handle this'
   return 'party time!!'
 }
+
+/* Kata "Add property to every object in array" on:
+https://www.codewars.com/kata/54e8c3e89e2ae6f4900005a1/ */
+
+//  solution:
+
+questions.forEach(function (elem) {
+  elem.usersAnswer = null;
+});
+
+/* Kata "Monkey Tennis - The Aftermath" on:
+https://www.codewars.com/kata/5a0c5b3206d5b696940000b8/ */
+
+//  solution:
+
+function ballCollector(detritus) {
+  
+  let sack = detritus.filter(function (elem) {
+    if (elem === 58) {
+      return elem
+    }
+  })
+  let weight = sack.length * 58
+  let obj = {
+    'weight': weight 
+  }
+  return obj
+}
