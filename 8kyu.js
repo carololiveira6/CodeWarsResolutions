@@ -508,3 +508,31 @@ function bonusTime(salary, bonus) {
   
   return output;
 }
+
+/* Kata "Take the Derivative" on:
+https://www.codewars.com/kata/5963c18ecb97be020b0000a2 */
+
+//  solution:
+
+function derive(coefficient,exponent) {
+  
+  coefficient !== 0;
+  exponent !== 1 && exponent !== 0;
+  
+  let result1 = 0
+  let result2 = 0
+  let resultadoFinal
+
+  result1 = coefficient * exponent;
+  result2 = exponent - 1;
+  resultadoFinal = result1 + "x^" + result2;
+    
+  return resultadoFinal;
+
+}
+
+/* Kata "Find the first non-consecutive number" on:
+https://www.codewars.com/kata/58f8a3a27a5c28d92e000144 */
+
+//  solution:
+
