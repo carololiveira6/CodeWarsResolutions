@@ -116,3 +116,12 @@ if (teamScore <= 80) return 'kill me now'
 if (teamScore < 100 && teamScore > 80) return 'i can handle this'
 return 'party time!!'
 }
+
+/* Kata "Add property to every object in array" on:
+https://www.codewars.com/kata/54e8c3e89e2ae6f4900005a1/ */
+
+//  solution:
+
+questions.forEach(function (elem) {
+  elem.usersAnswer = null;
+});
