@@ -191,3 +191,50 @@ function ballCollector(detritus) {
   }
   return obj
 }
+
+/* Kata "Filling an array (part 1)" on:
+https://www.codewars.com/kata/571d42206414b103dc0006a1/ */
+
+//  solution:
+
+const arr = N => {
+  const arr = [];
+ 
+ for (let i = 0; i < N; i++) {
+   arr.push(i);
+ }
+ 
+ return arr;
+};
+
+/* Kata "Highest and Lowest" on: 
+https://www.codewars.com/kata/554b4ac871d6813a03000035/ */
+
+//  solution:
+
+function highAndLow(numbers) {
+  
+  const newNumbers = numbers.split(" "); // retorna as substrings de numbers
+  let maxNumber = newNumbers[0]; // variável com valor do primeiro índice de newNumbers
+  let minNumber = newNumbers[0]; // variável com valor do primeiro índice de newNumbers
+  
+  for (let num of newNumbers) { // A cada iteração, um valor de uma propriedade diferente é atribuido à num.
+    // Number() converte o objeto, no caso "num" para número
+    if (Number(num) > maxNumber) {
+      maxNumber = num;
+    }
+    
+    if (Number(num) < minNumber) {
+      minNumber = num;
+    }
+    
+  }
+  
+  return maxNumber + " " + minNumber
+}
+
+/* Kata "Whose bicycle?" on:
+https://www.codewars.com/kata/5a2cb4bff28b820c33000082/train/javascript */
+
+//  solution:
+
