@@ -620,3 +620,8 @@ else {
 }
 }
 
+/* Kata "Grasshopper - Terminal Game #1" on:
+https://www.codewars.com/kata/55e8aba23d399a59500000ce/train/javascript */
+
+//  solution:
+
