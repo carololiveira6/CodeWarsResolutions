@@ -634,3 +634,62 @@ class Hero {
     this.experience = 0;
   }
 }
+
+/* Kata "Grasshopper - Create the rooms" on:
+https://www.codewars.com/kata/56a29b237e9e997ff2000048/train/javascript */
+
+const rooms = {
+  firstRoom: {
+    name: 'Room One',
+    description: 'Easy',
+    completed: true
+  },
+  secondRoom: {
+    name: 'Room Two',
+    description: 'Medium',
+    completed: true
+  },
+  thirdRoom: {
+    name: 'Room Third',
+    description: 'Hard',
+    completed: false
+  }
+
+/* Kata "Squash the bugs" on: 
+https://www.codewars.com/kata/56f173a35b91399a05000cb7/train/javascript */
+
+//  solution:
+
+function findLongest(str) {
+  
+  let spl = str.split(" ");
+  let longest = 0;
+  
+  for (let i = 0; i < spl.length; i++) {
+    if (spl[i].length > longest) {
+      longest = spl[i].length;
+    }
+  }
+  return longest;
+}
+
+/* Kata "Grasshopper - Bug Squashing" on: 
+https://www.codewars.com/kata/56214b6864fe8813f1000019/train/javascript */
+
+//  solution:
+
+let health = 100
+let position = 0
+let coins = 0
+
+function main () {
+  rollDice()
+  move()
+  combat()
+  getCoins()
+  buyHealth()
+  printStatus()
+}
+
+/* Kata "" on: 
+ */
