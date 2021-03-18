@@ -691,5 +691,30 @@ function main () {
   printStatus()
 }
 
-/* Kata "" on: 
- */
+/* Kata "Sum Arrays" on: 
+https://www.codewars.com/kata/53dc54212259ed3d4f00071c/train/javascript */
+
+//  solution:
+
+// Sum Numbers
+function sum (numbers) {
+  "use strict";
+let result = 0;
+for (let i = 0; i < numbers.length; i++) {
+  result += numbers[i]
+}
+return result
+};
+
+/* Kata "Sum Mixed Array" on:
+https://www.codewars.com/kata/57eaeb9578748ff92a000009/train/javascript */
+
+//  solution:
+
+function sumMix(x){
+  let result = 0;
+  for (let num of x) {
+    result += parseInt(num);
+  }
+  return result;
+}
