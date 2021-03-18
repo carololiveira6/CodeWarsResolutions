@@ -167,11 +167,17 @@ function boredom(staff){
 /* Kata "Add property to every object in array" on:
 https://www.codewars.com/kata/54e8c3e89e2ae6f4900005a1/ */
 
-//  solution:
+//  solution 1:
 
 questions.forEach(function (elem) {
   elem.usersAnswer = null;
 });
+
+//  solution 2:
+
+for (let i = 0; i < questions.length; i++) {
+  questions[i].usersAnswer = null;
+}
 
 /* Kata "Monkey Tennis - The Aftermath" on:
 https://www.codewars.com/kata/5a0c5b3206d5b696940000b8/ */
@@ -195,7 +201,7 @@ function ballCollector(detritus) {
 /* Kata "Filling an array (part 1)" on:
 https://www.codewars.com/kata/571d42206414b103dc0006a1/ */
 
-//  solution:
+//  solution 1:
 
 const arr = N => {
   const arr = [];
@@ -206,6 +212,16 @@ const arr = N => {
  
  return arr;
 };
+
+//  solution 2:
+
+const arr = N => {
+  let output = [];
+  
+  for (let i = 0; i < N; i++) {
+    output.push(i);
+  }
+  return output;
 
 /* Kata "Highest and Lowest" on: 
 https://www.codewars.com/kata/554b4ac871d6813a03000035/ */
@@ -234,9 +250,87 @@ function highAndLow(numbers) {
 }
 
 /* Kata "Whose bicycle?" on:
-https://www.codewars.com/kata/5a2cb4bff28b820c33000082/train/javascript */
+https://www.codewars.com/kata/5a2cb4bff28b820c33000082/ */
 
 //  solution:
 
-/* Kata "" on: 
- */
+function somaNotas(obj) {
+  let output = 0;
+  
+  for (let materia in obj) {
+    output += obj[materia];
+  }
+  
+  return output;
+}
+
+function pegaMaior(n1, n2, n3) {
+  let arr = [n1, n2, n3];
+  let output = 0;
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > output) {
+      output = arr[i];
+    }
+  }
+    
+  return output;
+}
+
+function whoseBicycle(diary1, diary2, diary3) {
+  let output = "first";
+  
+  let nota1 = somaNotas(diary1);
+  let nota2 = somaNotas(diary2);
+  let nota3 = somaNotas(diary3);
+
+  let maior = pegaMaior(nota1, nota2, nota3);
+  
+  if (nota1 === maior) {
+    output = "first";
+  }
+  
+  if (nota2 === maior) {
+    output = "second";
+  }
+  
+  if (nota3 === maior) {
+    output = "third";
+  }
+  return `I need to buy a bicycle for my ${output} son.`;
+}
+
+/* Kata "Jaden Casing Strings" on: 
+https://www.codewars.com/kata/5390bac347d09b7da40006f6/ */
+
+//  solution:
+
+String.prototype.toJadenCase = function () {
+  let words = this.split(" ");
+  let output = [];
+  
+  for (let i = 0; i < words.length; i++) {
+    let palavra = words[i];
+    let primeiraLetra = palavra[0];
+    let restanteDaPalavra = palavra.substring(1);
+    
+    let novaPalavra= primeiraLetra.toUpperCase() + restanteDaPalavra;
+    output.push(novaPalavra);
+  }
+  return output.join(" ");
+};
+
+/* Kata "Round up to the next multiple of 5" on:
+https://www.codewars.com/kata/55d1d6d5955ec6365400006d/ */
+
+//  solution:
+
+function roundToNext5(n){
+  let output = Math.floor(n / 5);
+  
+  if (n % 5 !== 0) {
+    output++;
+  }
+  return output * 5;
+}
+
