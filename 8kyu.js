@@ -718,3 +718,32 @@ function sumMix(x){
   }
   return result;
 }
+
+/* Kata "Smallest unused ID" on:
+https://www.codewars.com/kata/55eea63119278d571d00006a/ */
+
+//  solution:
+
+function nextId(ids){
+  let output = 0
+  
+  ids.sort(function(a, b) {return a - b});
+  
+  if (ids[0] !== 0) {
+    return 0;
+  }
+  
+  for (let i = 1; i < ids.length; i++) {
+    let atual = ids[i];
+    let anterior = ids[i - 1];
+    
+    if (atual !== (anterior + 1) && atual !== anterior) {
+      return anterior + 1;
+    }
+  }
+  
+  let ultimo = ids[ids.length - 1];
+  output = ultimo + 1;
+  
+  return output;
+}
