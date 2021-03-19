@@ -747,3 +747,13 @@ function nextId(ids){
   
   return output;
 }
+
+/* Kata "Remove String Spaces" on:
+https://www.codewars.com/kata/57eae20f5500ad98e50002c5/ */
+
+//  solution:
+
+function noSpace(x){
+  return x.split(' ').join('')
+}
+

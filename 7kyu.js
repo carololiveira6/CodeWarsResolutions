@@ -478,8 +478,49 @@ function sumOfMinimums(arr) {
   return sum;
 }
 
-/* Kata "" on: 
- */
+/* Kata "The Office I - Outed" on: 
+https://www.codewars.com/kata/57ecf6efc7fe13eb070000e1/ */
 
 //    solution:
+
+function outed(meet, boss){
+  let totalSum = 0
+  for (const key in meet) {
+      if ( key === boss) {
+          totalSum += meet[key] * 2
+      } else {
+          totalSum += meet[key]
+      }
+  }
+  
+  debugger
+      let result = Math.ceil(totalSum / Object.values(meet).length)
+      
+      if (result <= 5) {
+        return 'Get Out Now!'
+      } else {
+        return 'Nice Work Champ!'
+      }
+    }
+
+/* Kata "You Can't Code Under Pressure #2" on:
+https://www.codewars.com/kata/5546ea9bddfc5c0c38000026/ */
+
+//  solution:
+
+class Counter {
+  
+  constructor() {
+    this.counter = 0
+  }
+  
+  check() {
+    return this.counter
+  }
+ 
+  increment() {
+   this.counter++
+  }
+  
+};
 
