@@ -251,6 +251,7 @@ function highAndLow(numbers) {
 
 /* Kata "Whose bicycle?" on:
 https://www.codewars.com/kata/5a2cb4bff28b820c33000082/ */
+<<<<<<< HEAD
 
 //  solution:
 
@@ -377,6 +378,134 @@ https://www.codewars.com/kata/577bd8d4ae2807c64b00045b/ */
 
 //  solution:
 
+=======
+
+//  solution:
+
+function somaNotas(obj) {
+  let output = 0;
+  
+  for (let materia in obj) {
+    output += obj[materia];
+  }
+  
+  return output;
+}
+
+function pegaMaior(n1, n2, n3) {
+  let arr = [n1, n2, n3];
+  let output = 0;
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > output) {
+      output = arr[i];
+    }
+  }
+    
+  return output;
+}
+
+function whoseBicycle(diary1, diary2, diary3) {
+  let output = "first";
+  
+  let nota1 = somaNotas(diary1);
+  let nota2 = somaNotas(diary2);
+  let nota3 = somaNotas(diary3);
+
+  let maior = pegaMaior(nota1, nota2, nota3);
+  
+  if (nota1 === maior) {
+    output = "first";
+  }
+  
+  if (nota2 === maior) {
+    output = "second";
+  }
+  
+  if (nota3 === maior) {
+    output = "third";
+  }
+  return `I need to buy a bicycle for my ${output} son.`;
+}
+
+/* Kata "Jaden Casing Strings" on: 
+https://www.codewars.com/kata/5390bac347d09b7da40006f6/ */
+
+//  solution:
+
+String.prototype.toJadenCase = function () {
+  let words = this.split(" ");
+  let output = [];
+  
+  for (let i = 0; i < words.length; i++) {
+    let palavra = words[i];
+    let primeiraLetra = palavra[0];
+    let restanteDaPalavra = palavra.substring(1);
+    
+    let novaPalavra= primeiraLetra.toUpperCase() + restanteDaPalavra;
+    output.push(novaPalavra);
+  }
+  return output.join(" ");
+};
+
+/* Kata "Round up to the next multiple of 5" on:
+https://www.codewars.com/kata/55d1d6d5955ec6365400006d/ */
+
+//  solution:
+
+function roundToNext5(n){
+  let output = Math.floor(n / 5);
+  
+  if (n % 5 !== 0) {
+    output++;
+  }
+  return output * 5;
+}
+
+/* Kata "What dominates your array?" on:
+https://www.codewars.com/kata/559e10e2e162b69f750000b4/ */
+
+//  solution:
+
+function dominator(arr) {
+    
+  let numerosUnicos = [];
+  for (let i = 0; i < arr.length; i++) {
+    let item = arr[i];
+    
+    if (!numerosUnicos.includes(item)) {
+      numerosUnicos.push(item);
+    }
+  }
+  
+  let arrContagem = [];
+  for (let i = 0; i < numerosUnicos.length; i++) {
+    let contarAgora = numerosUnicos[i];
+    let contagem = 0
+    
+    for (let j = 0; j < arr.length; j++) {
+      let item = arr[j];
+      
+      if (item === contarAgora) {
+        contagem++;
+      }
+    }
+    
+    if (contagem > Math.floor(arr.length / 2)) {
+      return contarAgora;
+    }
+    
+  }
+  
+  return -1;
+}
+
+/* Kata "Two fighters, one winner." on:
+https://www.codewars.com/kata/577bd8d4ae2807c64b00045b/ */
+
+//  solution:
+
+>>>>>>> 56069c99634263fc83f027d5c33d7af186237969
 function declareWinner(fighter1, fighter2, firstAttacker) {
   let currentAttackerName = firstAttacker;
   let currentAttacker = fighter1;
@@ -478,8 +607,57 @@ function sumOfMinimums(arr) {
   return sum;
 }
 
+<<<<<<< HEAD
 /* Kata "" on: 
  */
 
 //    solution:
 
+=======
+/* Kata "The Office I - Outed" on: 
+https://www.codewars.com/kata/57ecf6efc7fe13eb070000e1/ */
+
+//    solution:
+
+function outed(meet, boss){
+  let totalSum = 0
+  for (const key in meet) {
+      if ( key === boss) {
+          totalSum += meet[key] * 2
+      } else {
+          totalSum += meet[key]
+      }
+  }
+  
+  debugger
+      let result = Math.ceil(totalSum / Object.values(meet).length)
+      
+      if (result <= 5) {
+        return 'Get Out Now!'
+      } else {
+        return 'Nice Work Champ!'
+      }
+    }
+
+/* Kata "You Can't Code Under Pressure #2" on:
+https://www.codewars.com/kata/5546ea9bddfc5c0c38000026/ */
+
+//  solution:
+
+class Counter {
+  
+  constructor() {
+    this.counter = 0
+  }
+  
+  check() {
+    return this.counter
+  }
+ 
+  increment() {
+   this.counter++
+  }
+  
+};
+
+>>>>>>> 56069c99634263fc83f027d5c33d7af186237969
