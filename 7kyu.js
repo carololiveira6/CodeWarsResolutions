@@ -333,3 +333,153 @@ function roundToNext5(n){
   }
   return output * 5;
 }
+
+/* Kata "What dominates your array?" on:
+https://www.codewars.com/kata/559e10e2e162b69f750000b4/ */
+
+//  solution:
+
+function dominator(arr) {
+    
+  let numerosUnicos = [];
+  for (let i = 0; i < arr.length; i++) {
+    let item = arr[i];
+    
+    if (!numerosUnicos.includes(item)) {
+      numerosUnicos.push(item);
+    }
+  }
+  
+  let arrContagem = [];
+  for (let i = 0; i < numerosUnicos.length; i++) {
+    let contarAgora = numerosUnicos[i];
+    let contagem = 0
+    
+    for (let j = 0; j < arr.length; j++) {
+      let item = arr[j];
+      
+      if (item === contarAgora) {
+        contagem++;
+      }
+    }
+    
+    if (contagem > Math.floor(arr.length / 2)) {
+      return contarAgora;
+    }
+    
+  }
+  
+  return -1;
+}
+
+/* Kata "Two fighters, one winner." on:
+https://www.codewars.com/kata/577bd8d4ae2807c64b00045b/ */
+
+//  solution:
+
+function declareWinner(fighter1, fighter2, firstAttacker) {
+  let currentAttackerName = firstAttacker;
+  let currentAttacker = fighter1;
+  let currentVictim = fighter2;
+  
+  if (currentAttackerName === fighter2.name) {
+    currentAttacker = fighter2;
+    currentVictim = fighter1;
+  }
+  
+  while (fighter1.health > 0 && fighter2.health > 0) {
+    currentVictim.health -= currentAttacker.damagePerAttack;
+    
+    if (currentVictim.health <= 0) {
+      return currentAttacker.name;
+    }
+    
+    let temp = currentAttacker;
+    currentAttacker = currentVictim
+    currentVictim = temp;
+  }
+}
+
+/* Kata "Job Matching #2" on:
+https://www.codewars.com/kata/56c2578be8b139bd5c001bd8 */
+
+//  solution:
+
+function hasEquityMatch(job, candidate) {
+  let output = false;
+  
+  if (
+  (job.equityMax > 0 && candidate.desiresEquity === true)
+  ||
+  (candidate.desiresEquity === false)
+  ) {
+    output = true;
+  }
+  
+  return output;
+}
+
+function hasLocationMatch(job, candidate) {
+  for (let i = 0; i < job.locations.length; i++) {
+    let jobLocation = job.locations[i];
+    
+    if (jobLocation === candidate.currentLocation || candidate.desiredLocations.includes(jobLocation)) {
+      return true;
+    }
+  }
+  
+  return false;
+}
+
+function match(job, candidates) {
+  let output = [];
+  
+  for (let i = 0; i < candidates.length; i++) {
+    let candidate = candidates[i];
+    
+    if (hasEquityMatch(job, candidate) && hasLocationMatch(job, candidate)) {
+      output.push(candidate);
+    }
+  }
+  
+  
+  return output;
+
+/* Kata "Sum of Minimums!" on:
+https://www.codewars.com/kata/5d5ee4c35162d9001af7d699/ */
+
+//  solution:
+
+function getMenorValor(arr) {
+  let output = arr[0];
+  
+  if (arr.length < 2) {
+    return output;
+  }
+  
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < output) {
+      output = arr[i];
+    }
+  }
+  
+  return output;
+}
+
+function sumOfMinimums(arr) {
+  let sum = 0;
+  
+  for (let i = 0; i < arr.length; i++) {
+    let currentArr = arr[i];
+    let menor = getMenorValor(currentArr);
+    sum += menor;
+  }
+  
+  return sum;
+}
+
+/* Kata "" on: 
+ */
+
+//    solution:
+
