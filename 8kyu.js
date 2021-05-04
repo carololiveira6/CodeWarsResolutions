@@ -192,10 +192,26 @@ function doubleInteger(i) {
 /* Kata "Invert values" on:
 https://www.codewars.com/kata/5899dc03bc95b1bf1b0000ad */
 
-//   solution:
+//   solution 1:
 
 function invert(array) {
   return array.map(i => -i)
+}
+
+//   solution 2:
+
+function invert(array) {
+  
+  let newArray = [];
+  
+   for (let i = 0; i < array.length; i++) {
+       if (array[i] === 0) {
+        newArray.push(array[i]);
+       } else {
+         newArray.push(array[i] * (-1));
+       }
+   }
+  return newArray;
 }
 
 /* Kata "Is he gonna survive?" on: 
@@ -394,7 +410,7 @@ var totalGoals = laLigaGoals + championsLeagueGoals + copaDelReyGoals
 /* Kata "Square(n) Sum" on:
 https://www.codewars.com/kata/515e271a311df0350d00000f/train/javascript */
 
-//  solution:
+//  solution 1:
 
 function squareSum(numbers){
 let output = 0;
@@ -406,6 +422,18 @@ for (let i = 0; i < numbers.length; i++) {
   output += squared;
 }
 return output;
+}
+
+//  solution 2:
+
+function squareSum(numbers){
+  let output = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    let number = numbers[i];
+    let squared = number ** 2
+    output += squared
+  }
+  return output
 }
 
 /* Kata "Welcome!" on:
@@ -505,7 +533,7 @@ return output;
 /* Kata "Take the Derivative" on:
 https://www.codewars.com/kata/5963c18ecb97be020b0000a2 */
 
-//  solution:
+//  solution 1:
 
 function derive(coefficient,exponent) {
 
@@ -522,6 +550,17 @@ resultadoFinal = result1 + "x^" + result2;
   
 return resultadoFinal;
 
+}
+
+//  solution 2:
+
+function derive(coefficient,exponent) {
+  let multiply = coefficient * exponent
+  let exp = exponent - 1
+  
+  let output = `${multiply}x^${exp}`
+  
+  return output
 }
 
 /* Kata "Find the first non-consecutive number" on:
@@ -654,6 +693,7 @@ const rooms = {
     description: 'Hard',
     completed: false
   }
+}
 
 /* Kata "Squash the bugs" on: 
 https://www.codewars.com/kata/56f173a35b91399a05000cb7/train/javascript */
@@ -746,9 +786,6 @@ function nextId(ids){
   output = ultimo + 1;
   
   return output;
-<<<<<<< HEAD
-}
-=======
 }
 
 /* Kata "Remove String Spaces" on:
@@ -760,4 +797,263 @@ function noSpace(x){
   return x.split(' ').join('')
 }
 
->>>>>>> 56069c99634263fc83f027d5c33d7af186237969
+/* Kata "Check the exam" on:
+https://www.codewars.com/kata/5a3dd29055519e23ec000074/ */
+
+//  solution:
+
+function checkExam(array1, array2) {
+  let score = 0
+  
+ for (let i = 0; i < array1.length; i++) {
+   if (array1[i] === array2[i]) {
+     score += 4;
+   } else if (array2[i] === "") {
+     score += 0;
+   } else {
+     score -= 1;
+   }
+ }
+  if (score < 0) {
+    score = 0;
+  }
+  
+  return score;
+}
+
+/* Kata "Can we divide it?" on:
+https://www.codewars.com/kata/5a2b703dc5e2845c0900005a/ */
+
+//  solution:
+
+function isDivideBy(number, a, b) {
+  if (number % a === 0 && number % b === 0) {
+    return true
+  } else {
+    return false
+  }
+}
+
+/* Kata "Transpose two strings in an array" on:
+https://www.codewars.com/kata/581f4ac139dc423f04000b99/train/javascript */
+
+//  solution:
+
+function transposeTwoStrings(arr){
+  let output = [];
+  
+  let wordOne = arr[0];
+  let wordTwo = arr[1];
+  
+  let tamanho = wordOne.length;
+  
+  if (wordTwo.length > tamanho) {
+    tamanho = wordTwo.length;
+  }
+  
+  for (let i = 0; i < tamanho; i++) {
+    let letterOne = " ";
+    let letterTwo = " ";
+    
+    if (wordOne[i] !== undefined) {
+      letterOne = wordOne[i];
+    }
+    
+    if (wordTwo[i] !== undefined) {
+      letterTwo = wordTwo[i];
+    }
+    
+    output.push(`${letterOne} ${letterTwo}`);
+    
+  }
+  
+  return output.join("\n");
+}
+
+/* Kata "Classy Classes" on:
+https://www.codewars.com/kata/55a144eff5124e546400005a/ */
+
+//  solution:
+
+class Person {
+  constructor(name, age) {
+    this.name = 'john'
+    this.age = 34
+    this.info = `${name}s age is ${age}`
+  }
+}
+
+/* Kata "Reversed Words" on:
+https://www.codewars.com/kata/51c8991dee245d7ddf00000e/ */
+
+//  solution:
+
+function reverseWords(str){
+  let result = str.split(" ").reverse().join(" ");
+  return result;
+}
+
+/* Kata "Grasshopper - Debug" on:
+https://www.codewars.com/kata/55cb854deb36f11f130000e1/ */
+
+//  solution:
+
+function weatherInfo (temp) {
+  let celsius = (temp - 32) * (5/9)
+  if (celsius < 0) {
+    return (celsius + " is freezing temperature")
+  } else {
+    } return (celsius + " is above freezing temperature")
+}
+
+/* Kata "String Templates - Bug Fixing #5" on:
+https://www.codewars.com/kata/55c90cad4b0fe31a7200001f/ */
+
+//  solution:
+
+function buildString(...template){
+  return `I like ${template.join(', ')}!`;
+}
+
+/* Kata "Unexpected parsing" on:
+https://www.codewars.com/kata/54fdaa4a50f167b5c000005f/ */
+
+//  solution:
+
+function getStatus(isBusy) {
+  return {
+    status: isBusy ? "busy" : "available"
+  }
+}
+
+/* Kata "101 Dalmatians - squash the bugs, not the dogs!" on:
+https://www.codewars.com/kata/56f6919a6b88de18ff000b36/ */
+
+//  solution:
+
+function howManyDalmatians(number) {
+  const dogs = [
+    'Hardly any',
+    'More than a handful!',
+    "Woah that's a lot of dogs!",
+    '101 DALMATIANS!!!',
+  ]
+  const respond =
+    number <= 10
+      ? dogs[0]
+      : number <= 50 ? dogs[1] : number === 101 ? dogs[3] : dogs[2]
+  return respond
+}
+
+/* Kata "Fix your code before the garden dies!" on:
+https://www.codewars.com/kata/57158fb92ad763bb180004e7/ */
+
+//  solution:
+
+function rainAmount(mm) {
+  if (mm < 40) {
+       return `You need to give your plant ${40 - mm}mm of water`
+  } else {
+       return "Your plant has had more than enough water for today!"
+  }
+}
+
+/* Kata "The Feast of Many Beasts" on:
+https://www.codewars.com/kata/5aa736a455f906981800360d/ */
+
+//  solution:
+
+function feast(beast, dish) {
+  
+  let newBeast = beast.split('');
+  let newDish = dish.split('');
+  
+  if (newDish[newDish.length - 1] === newBeast[newBeast.length - 1] 
+     && newDish[0] === newBeast[0]) {
+    return true;
+  } 
+  return false;
+}
+
+/* Kata "Stringy Strings" on:
+https://www.codewars.com/kata/563b74ddd19a3ad462000054 */
+
+//  solution:
+
+function stringy(size) {
+  
+  let array = []; 
+  
+  for (let i = 1; i <= size; i++) {
+    if (i % 2 === 0) {
+      array.push(0)
+    } else {
+      array.push(1)
+    }
+  }
+  
+  return array.join('')
+}
+
+/* Kata "Remove First and Last Character" on:
+https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0/ */
+
+//  solution:
+
+function removeChar(str){
+ 
+  let newStr = str.substring(1, str.length - 1)
+  
+  return newStr
+
+};
+
+/* Kata "String repeat" on:
+https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/ */
+
+//  solution:
+
+function repeatStr (n, s) {
+  
+  let multiply = s.repeat(n)
+  return multiply;
+}
+
+/* Kata "Reversed Strings" on:
+https://www.codewars.com/kata/5168bb5dfe9a00b126000018/ */
+
+//  solution:
+
+function solution(str){
+  
+  let newStr = str.split("")
+  let finalStr = newStr.reverse()
+  
+  return finalStr.join('')
+}
+
+/* Kata "Convert a Number to a String!" on:
+https://www.codewars.com/kata/5265326f5fda8eb1160004c8/ */
+
+//  solution:
+
+function numberToString(num) {
+  let str = num.toString()
+  
+  return str
+}
+
+/* Kata "Abbreviate a Two Word Name" on:
+https://www.codewars.com/kata/57eadb7ecd143f4c9c0000a3/ */
+
+//  solution:
+
+function abbrevName(name){
+
+  let newName = name.split(" ")
+  let result
+  for (let i = 0; i < newName.length; i++) {
+    result = `${newName[0][0]}.${newName[1][0]}`
+  }
+  return result.toUpperCase()
+}

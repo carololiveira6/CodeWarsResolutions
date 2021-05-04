@@ -222,6 +222,7 @@ const arr = N => {
     output.push(i);
   }
   return output;
+}
 
 /* Kata "Highest and Lowest" on: 
 https://www.codewars.com/kata/554b4ac871d6813a03000035/ */
@@ -251,7 +252,6 @@ function highAndLow(numbers) {
 
 /* Kata "Whose bicycle?" on:
 https://www.codewars.com/kata/5a2cb4bff28b820c33000082/ */
-<<<<<<< HEAD
 
 //  solution:
 
@@ -378,134 +378,6 @@ https://www.codewars.com/kata/577bd8d4ae2807c64b00045b/ */
 
 //  solution:
 
-=======
-
-//  solution:
-
-function somaNotas(obj) {
-  let output = 0;
-  
-  for (let materia in obj) {
-    output += obj[materia];
-  }
-  
-  return output;
-}
-
-function pegaMaior(n1, n2, n3) {
-  let arr = [n1, n2, n3];
-  let output = 0;
-  
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > output) {
-      output = arr[i];
-    }
-  }
-    
-  return output;
-}
-
-function whoseBicycle(diary1, diary2, diary3) {
-  let output = "first";
-  
-  let nota1 = somaNotas(diary1);
-  let nota2 = somaNotas(diary2);
-  let nota3 = somaNotas(diary3);
-
-  let maior = pegaMaior(nota1, nota2, nota3);
-  
-  if (nota1 === maior) {
-    output = "first";
-  }
-  
-  if (nota2 === maior) {
-    output = "second";
-  }
-  
-  if (nota3 === maior) {
-    output = "third";
-  }
-  return `I need to buy a bicycle for my ${output} son.`;
-}
-
-/* Kata "Jaden Casing Strings" on: 
-https://www.codewars.com/kata/5390bac347d09b7da40006f6/ */
-
-//  solution:
-
-String.prototype.toJadenCase = function () {
-  let words = this.split(" ");
-  let output = [];
-  
-  for (let i = 0; i < words.length; i++) {
-    let palavra = words[i];
-    let primeiraLetra = palavra[0];
-    let restanteDaPalavra = palavra.substring(1);
-    
-    let novaPalavra= primeiraLetra.toUpperCase() + restanteDaPalavra;
-    output.push(novaPalavra);
-  }
-  return output.join(" ");
-};
-
-/* Kata "Round up to the next multiple of 5" on:
-https://www.codewars.com/kata/55d1d6d5955ec6365400006d/ */
-
-//  solution:
-
-function roundToNext5(n){
-  let output = Math.floor(n / 5);
-  
-  if (n % 5 !== 0) {
-    output++;
-  }
-  return output * 5;
-}
-
-/* Kata "What dominates your array?" on:
-https://www.codewars.com/kata/559e10e2e162b69f750000b4/ */
-
-//  solution:
-
-function dominator(arr) {
-    
-  let numerosUnicos = [];
-  for (let i = 0; i < arr.length; i++) {
-    let item = arr[i];
-    
-    if (!numerosUnicos.includes(item)) {
-      numerosUnicos.push(item);
-    }
-  }
-  
-  let arrContagem = [];
-  for (let i = 0; i < numerosUnicos.length; i++) {
-    let contarAgora = numerosUnicos[i];
-    let contagem = 0
-    
-    for (let j = 0; j < arr.length; j++) {
-      let item = arr[j];
-      
-      if (item === contarAgora) {
-        contagem++;
-      }
-    }
-    
-    if (contagem > Math.floor(arr.length / 2)) {
-      return contarAgora;
-    }
-    
-  }
-  
-  return -1;
-}
-
-/* Kata "Two fighters, one winner." on:
-https://www.codewars.com/kata/577bd8d4ae2807c64b00045b/ */
-
-//  solution:
-
->>>>>>> 56069c99634263fc83f027d5c33d7af186237969
 function declareWinner(fighter1, fighter2, firstAttacker) {
   let currentAttackerName = firstAttacker;
   let currentAttacker = fighter1;
@@ -570,9 +442,8 @@ function match(job, candidates) {
       output.push(candidate);
     }
   }
-  
-  
   return output;
+}
 
 /* Kata "Sum of Minimums!" on:
 https://www.codewars.com/kata/5d5ee4c35162d9001af7d699/ */
@@ -607,13 +478,6 @@ function sumOfMinimums(arr) {
   return sum;
 }
 
-<<<<<<< HEAD
-/* Kata "" on: 
- */
-
-//    solution:
-
-=======
 /* Kata "The Office I - Outed" on: 
 https://www.codewars.com/kata/57ecf6efc7fe13eb070000e1/ */
 
@@ -660,4 +524,205 @@ class Counter {
   
 };
 
->>>>>>> 56069c99634263fc83f027d5c33d7af186237969
+/* Kata "Largest pair sum in array" on:
+https://www.codewars.com/kata/556196a6091a7e7f58000018/ */
+
+//  solution:
+
+function largestPairSum(numbers){
+  const newNumbers = numbers.sort( function (a, b) {
+      return b - a
+  })
+  let sum = newNumbers[0] + newNumbers[1];
+  return sum
+}
+
+/* Kata "All unique" on:
+https://www.codewars.com/kata/553e8b195b853c6db4000048/ */
+
+//  solution:
+
+function hasUniqueChars(str){
+  let items = [];
+  
+  for (let i = 0; i < str.length; i++) {
+    if (! items.includes(str[i])) {
+      items.push(str[i]);
+    }
+  }
+  
+  if ( items.length === str.length) {
+    return true;
+  }
+  
+  return false;
+}
+
+/* Kata "makeAcronym" on:
+https://www.codewars.com/kata/557efeb04effce569d000022/ */
+
+//  solution:
+
+const isString = (str) => {
+  return typeof str === 'string';
+};
+
+const hasOnlyLetterAndSpaces = (str) => {
+  let re = new RegExp('^[A-Za-z ]*$', 'g');
+  return re.test(str);
+}
+
+const makeAcronym = (string) => {
+  if (!isString(string)) {
+    return "Not a string";
+  }
+  
+  if (!hasOnlyLetterAndSpaces(string)) {
+    return "Not letters";
+  }
+  
+  return string
+    .split(' ')
+    .map((item) => item.toUpperCase())
+    .map((item) => item.split('').shift())
+    .join('')
+}
+
+/* Kata "Split The Bill" on:
+https://www.codewars.com/kata/5641275f07335295f10000d0/ */
+
+//  solution:
+
+function splitTheBill(x) {
+  
+  let total = 0;
+  
+  Object.keys(x).forEach(function(key) {
+    total += x[key];
+  });
+  
+  let average = total / (Object.keys(x).length);
+  
+  let result = {};
+  Object.keys(x).forEach(function(key) {
+    result[key] = Number((x[key] - average).toFixed(2));
+  });
+  
+  return result;
+}
+
+/* Kata "Daily Calorie Requirement" on:
+https://www.codewars.com/kata/5a088d8e80171fcd8800006b/ */
+
+//  solution:
+
+function calorie ([name, gender, age, heigth, weight, activity]){
+  
+  let soma = 0;
+  let result;
+      
+  if (gender === "f" && activity === "little activity") {
+    soma += (10 * weight + 6.25 * heigth - 5 * age - 161) * 1.2;
+  }
+  
+  if (gender === "f" && activity === "moderately active") {
+    soma += (10 * weight + 6.25 * heigth - 5 * age - 161) * 1.55;
+  }
+  
+  if (gender === "f" && activity === "very active") {
+    soma += (10 * weight + 6.25 * heigth - 5 * age - 161) * 1.7;
+  }
+  
+  if (gender === "f" && activity === "extremely active") {
+    soma += (10 * weight + 6.25 * heigth - 5 * age - 161) * 1.9;
+  }
+  
+  if (gender === "m" && activity === "little activity") {
+    soma += (10 * weight + 6.25 * heigth - 5 * age + 5) * 1.2;
+  }
+  
+  if (gender === "m" && activity === "moderately active") {
+    soma += (10 * weight + 6.25 * heigth - 5 * age + 5) * 1.55;
+  }
+  
+  if (gender === "m" && activity === "very active") {
+    soma += (10 * weight + 6.25 * heigth - 5 * age + 5) * 1.7;
+  }
+  
+  if (gender === "m" && activity === "extremely active") {
+    soma += (10 * weight + 6.25 * heigth - 5 * age + 5) * 1.9;
+  }
+
+  result = `${name}´s daily calorie requirement is ${(Math.round(soma * 100) / 100).toFixed(2)} kcal.`
+
+
+return result;
+}
+
+/* Kata "Vowel Count" on:
+https://www.codewars.com/kata/54ff3102c1bad923760001f3/ */
+
+//  solution:
+
+function getCount(str) {
+  let vowelsCount = 0;
+  let newStr = str.split('');
+  
+  for (let i = 0; i < newStr.length; i++) {
+    if (newStr[i] === 'a') {
+      vowelsCount += 1
+    }
+    
+    if (newStr[i] === 'e') {
+      vowelsCount += 1
+    }
+    
+    if (newStr[i] === 'i') {
+      vowelsCount += 1
+    }
+    
+    if (newStr[i] === 'o') {
+      vowelsCount += 1
+    }
+    
+    if (newStr[i] === 'u') {
+      vowelsCount += 1
+    }
+  }
+  
+  return vowelsCount;
+}
+
+/* Kata "Disemvowel Trolls" on:
+https://www.codewars.com/kata/52fba66badcd10859f00097 */
+
+//  solution:
+
+function disemvowel(str) {
+  
+  let newStr = str.split('');
+  
+  for (let i = 0; i < newStr.length; i++) {
+    if (newStr[i] === 'a' || newStr[i] === 'A') {
+      newStr[i] = ''
+    }
+    
+    if (newStr[i] === 'e' || newStr[i] === 'E') {
+      newStr[i] = ''
+    }
+    
+    if (newStr[i] === 'i' || newStr[i] === 'I') {
+      newStr[i] = ''
+    }
+    
+    if (newStr[i] === 'o'|| newStr[i] === 'O') {
+      newStr[i] = ''
+    }
+    
+    if (newStr[i] === 'u' || newStr[i] === 'U') {
+      newStr[i] = ''
+    }
+  }
+  
+  return newStr.join('');
+}
