@@ -726,3 +726,21 @@ function disemvowel(str) {
   
   return newStr.join('');
 }
+
+/* Kata "The Lazy Startup Office" on:
+https://www.codewars.com/kata/578fdcfc75ffd1112c0001a1/javascript */
+
+// solution:
+
+function binRota(staff){
+
+  let finalArray = [];
+  for (let i = 0; i < staff.length; i++) {
+    if (i % 2 !== 0) {
+      finalArray = finalArray.concat(staff[i].reverse());
+    } else {
+      finalArray = finalArray.concat(staff[i])
+    }
+  }
+  return finalArray
+}
