@@ -744,3 +744,13 @@ function binRota(staff){
   }
   return finalArray
 }
+
+/* Kata "String ends with?" on:
+https://www.codewars.com/kata/51f2d1cafc9c0f745c00037d
+*/
+
+// solution:
+
+function solution(str, ending){
+  return str.endsWith(ending)
+}
