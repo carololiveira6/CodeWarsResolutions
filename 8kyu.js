@@ -1008,6 +1008,12 @@ function removeChar(str){
 
 };
 
+function removeChar(str){
+  if (str.length == 2) return ''
+  const newStr = str.substring(1, str.length - 1)
+  return newStr
+};
+
 /* Kata "String repeat" on:
 https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/ */
 
@@ -1030,6 +1036,10 @@ function solution(str){
   let finalStr = newStr.reverse()
   
   return finalStr.join('')
+}
+
+function reverseWords(str){
+  return result = str.split(' ').reverse().join(' ')  
 }
 
 /* Kata "Convert a Number to a String!" on:
